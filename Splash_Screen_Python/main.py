@@ -31,6 +31,13 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        # MAIN WINDOW TEXT
+        # QtCore.QTimer.singleShot(1500, lambda: self.ui.label.setText(
+        #     "<strong>THANK</strong> FOR WATCHING"))
+
+        # QtCore.QTimer.singleShot(1500, lambda: self.ui.label.setStyleSheet(
+        #     "background-colo: #222; calor: #FFF"))
+
 # SCREEN
 
 
@@ -60,6 +67,18 @@ class FirstWindow(QMainWindow):
         self.timer.timeout.connect(self.progress)  # type: ignore
         # TIMER IN MILLESECONDS
         self.timer.start(35)
+
+        # CHANGE DESCRIPTION
+
+        # Initial text
+        self.ui.label_description.setText(
+            "<strong>WELLCOME</strong> TO MY APPLICATION")
+
+        # Charge Texts
+        QtCore.QTimer.singleShot(1500, lambda: self.ui.label_description.setText(
+            "<strong>LOADING</strong> DATABASE"))
+        QtCore.QTimer.singleShot(3000, lambda: self.ui.label_description.setText(
+            "<strong>LOADING</strong> YOUR FINANCE CONTROL"))
 
         # SHOW -->> MAIN WINDOW
         ##########################################################
